@@ -1,11 +1,9 @@
-# Add your Ansible Container service definitions here.
-# For example:
   
 filebeat:
   image: "centos:7" 
   user: filebeat
-  command: ['filebeat', '-e', '-c', '/etc/filebeat']
+  command: ['filebeat', '-e', '-c', '/etc/filebeat/filebeat.yml']
 
   # volumes:
-  # - <volume with filebeat config>:/etc/filebeat
+  # - <volume containing custom filebeat.yml >:/etc/filebeat
    
