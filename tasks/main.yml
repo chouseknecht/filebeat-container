@@ -17,12 +17,23 @@
     name: filebeat
     state: present
 
+- name: Clean yum cache
+  command: yum clean all
+
 - name: Create user filebeat
   user:
     name: filebeat
     uid: 1000
     createhome: no
     group: root 
+
+- name: Set /var/log owner 
+  command: chown -R root:root /var/log 
+
+- name: Set log file permissions
+  command: chmod -R 0664 *.log
+  args:
+    chdir: /var/log 
 
 - name: Template the default config file
   template:
@@ -32,4 +43,15 @@
     group: root
     mode: 0664
  
- 
+- name: Test the file configuration
+  command: filebeat -e -configtest -c /etc/filebeat/filebeat.yml  
+  register: output
+
+- name: Show config test
+  debug:
+    var: output.stdout
+  register: output
+
+- name: Show config test
+  debug:
+    var: output
