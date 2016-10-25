@@ -17,3 +17,12 @@
     name: filebeat
     state: present
 
+- name: Copy the config file
+  template:
+    src: filebeat.yml
+    dest: /etc/filebeat/filebeat.yml.j2
+    owner: root
+    group: root
+    mode: 0664
+ 
+ 
