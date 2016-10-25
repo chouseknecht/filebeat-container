@@ -3,4 +3,9 @@
   
 filebeat:
   image: "centos:7" 
-  command: ['sleep', '1d']
+  user: filebeat
+  command: ['filebeat', '-e', '-c', '/etc/filebeat']
+
+  # volumes:
+  # - <volume with filebeat config>:/etc/filebeat
+   

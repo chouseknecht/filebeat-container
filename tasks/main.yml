@@ -17,7 +17,14 @@
     name: filebeat
     state: present
 
-- name: Copy the config file
+- name: Create user filebeat
+  user:
+    name: filebeat
+    uid: 1000
+    createhome: no
+    group: root 
+
+- name: Template the default config file
   template:
     src: filebeat.yml.j2
     dest: /etc/filebeat/filebeat.yml
