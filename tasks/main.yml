@@ -1,4 +1,7 @@
 ---
+- name: install python 2
+  raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
 - name: Add Elasticsearch GPG key
   command: curl https://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
 
