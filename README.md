@@ -42,8 +42,8 @@ file.
 Although not strictly required, a container created from this role is fairly useless without an associated logstash or elsasticsearch service. Pair this service with one or both 
 of the following: 
 
-[chouseknecht.elasticsearch-container](https://galaxy.ansible.com/chouseknecht/elasticsearch-container)
-[chouseknecht.logstash-container](https://galaxy.ansible.com/chouseknecht/logstash-container) 
+- [chouseknecht.elasticsearch-container](https://galaxy.ansible.com/chouseknecht/elasticsearch-container)
+- [chouseknecht.logstash-container](https://galaxy.ansible.com/chouseknecht/logstash-container) 
 
 ## License
 
