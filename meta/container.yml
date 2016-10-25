@@ -2,5 +2,5 @@
 # For example:
   
 filebeat:
-  image: "ubuntu:trusy" 
+  image: "ubuntu:trusty" 
   command: ['sleep', '1d']
