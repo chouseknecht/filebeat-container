@@ -1,23 +1,19 @@
 ---
-- name: Install python 2
-  raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
-
 - name: Add Elasticsearch GPG key
-  apt_key:
-    url: https://packages.elasticsearch.org/GPG-KEY-elasticsearch
-    id: D88E42B4
+  rpm_key:
+    key: https://packages.elastic.co/GPG-KEY-elasticsearch
     state: present
 
-- name: Add the Elasticsearch apt repo 
-  apt_repository:
-    repo: "deb https://packages.elastic.co/beats/apt stable main"
-    state: present
-
-- name: Update apt cache
-  apt: update_cache=yes
+- name: Add the yum repo
+  template:
+    src: beats.repo
+    dest: /etc/yum.repos.d/beats.repo
+    owner: root
+    group: root
+    mode: 0664
 
 - name: Install filebeat
-  apt:
+  yum:
     name: filebeat
     state: present
 
