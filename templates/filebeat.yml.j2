@@ -16,16 +16,18 @@ filebeat:
       # * log: Reads every line of the log file (default)
       # * stdin: Reads the standard in
       input_type: log
-  output:
-      # Configure what outputs to use when sending the data collected by the beat.
-      # Multiple outputs may be used.
+output:
 {% if filebeat_elasticsearch_hosts | length > 0 %}
-      elasticsearch:
-          {{ filebeat_elasticsearch_hosts }}
+    elasticsearch:
+        hosts:
+{% for host in filebeat_elasticsearch_hosts %}
+        - {{ host }}
+ {% endfor %}
 {% endif %}
 {% if filebeat_logstash_hosts | length > 0 %}
-      logstash:
+    logstash:
+        hosts:
 {% for host in filebeat_logstash_hosts %}
-         - {{ host }} 
+        - {{ host }} 
 {% endfor %}
 {% endif %}

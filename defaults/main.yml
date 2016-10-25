@@ -1,4 +1,4 @@
 ---
 filebeat_elasticsearch_hosts: []
 filebeat_logstash_hosts:
-  - http://logstash:5044
+  - logstash:5044
