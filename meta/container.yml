@@ -1,6 +1,6 @@
 # Add your Ansible Container service definitions here.
 # For example:
   
-filebeats:
+filebeat:
   image: ubuntu:trusty
   command: ['sleep', '1d']
