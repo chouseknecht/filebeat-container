@@ -1,0 +1,6 @@
+---
+# defaults file for filebeats-container
+
+filebeat_ elasticsearch_hosts: []
+
+filebeat_logstash_hosts: []

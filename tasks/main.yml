@@ -1,0 +1,17 @@
+---
+- name: Add Elasticsearch GPG key
+  command: curl https://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
+
+- name: Add the Elasticsearch apt repo 
+  apt_repository:
+    repo: "deb https://packages.elastic.co/beats/apt stable main"
+    state: present
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install filebeat
+  apt:
+    name: filebeat
+    state: present
+
