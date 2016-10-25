@@ -2,7 +2,7 @@
 - name: Install python 2
   raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
 
-- namew: Install curl
+- name: Install curl
   raw: apt -y update && apt install -y curl
 
 - name: Add Elasticsearch GPG key
