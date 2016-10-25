@@ -28,9 +28,11 @@ $ ansible-container install chouseknecht.filebeat
 
 ## Role Variables
 
+```
 filebeat_elasticsearch_hosts: []
 filebeat_logstash_hosts:
   - logstash:5044
+```
 > Define the filebeat logstash and elasticsearch output hosts. Each requires a list, where `[]` represents an empty list. When using the default configuration file, the container 
 will fail unless you provide at least one logstash host or one elasticsearch host. The host does not actually have to exist or be reachable, it just has to be named in the config
 file. 
