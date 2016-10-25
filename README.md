@@ -1,5 +1,7 @@
 # Role Name
 
+[![Build Status](https://travis-ci.org/chouseknecht/filebeat-container.svg?branch=master)](https://travis-ci.org/chouseknecht/filebeat-container)
+
 Adds a filebeat service to your [Ansible Container](https://github.com/ansible/ansible-container) project. Run the following commands
 to install the service:
 
