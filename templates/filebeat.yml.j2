@@ -25,5 +25,7 @@ filebeat:
 {% endif %}
 {% if filebeat_logstash_hosts | length > 0 %}
       logstash:
-          {{ filebeat_logstash_hosts }}
+{% for host in filebeat_logstash_hosts %}
+         - {{ host }} 
+{% endfor %}
 {% endif %}
